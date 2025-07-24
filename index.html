@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Operator Aritmatika</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(to bottom right, #dce3ec, #f4f7fa);
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 30px;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 30px;
+      flex-wrap: wrap;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    form, .results {
+      background-color: #ffffff;
+      width: 100%;
+      max-width: 450px;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    form:hover, .results:hover {
+      transform: scale(1.01);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin: 15px 0 5px;
+      color: #34495e;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      transition: border-color 0.3s;
+    }
+
+    input[type="number"]:focus {
+      border-color: #3498db;
+      outline: none;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+      transform: scale(1.03);
+    }
+
+    .results h2 {
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+      color: #34495e;
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: auto auto;
+      row-gap: 8px;
+      column-gap: 15px;
+    }
+
+    .results-grid div {
+      font-size: 15px;
+      color: #2c3e50;
+    }
+
+    @media (max-width: 960px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Form Operator Aritmatika dan Perbandingan</h1>
+
+  <div class="container">
+    <form action="/" method="post">
+      <label>Nilai 1:</label>
+      <input type="number" name="AzkaNilai1" step="any" required />
+
+      <label>Nilai 2:</label>
+      <input type="number" name="AzkaNilai2" step="any" required />
+
+      <button type="submit">Hitung</button>
+    </form>
+
+    <div class="results">
+        <h2>Hasil Aritmatika</h2>
+        <div class="results-grid">
+        <div>Nilai 1</div><div>{{ AzkaNilai1 if AzkaNilai1 is not none else 0 }}</div>
+        <div>Nilai 2</div><div>{{ AzkaNilai2 if AzkaNilai2 is not none else 0 }}</div>
+        <div>Penjumlahan</div><div>{{ Azka1 if Azka1 is not none else 0 }}</div>
+        <div>Pengurangan</div><div>{{ Azka2 if Azka2 is not none else 0 }}</div>
+        <div>Pembagian</div><div>{{ Azka3 if Azka3 is not none else 0 }}</div>
+        <div>Perkalian</div><div>{{ Azka4 if Azka4 is not none else 0 }}</div>
+        </div>
+
+        <h2 style="margin-top: 25px;">Hasil Perbandingan</h2>
+        <div class="results-grid">
+        <div>Sama Dengan (==)</div><div>{{ Azka5 if Azka5 is not none else 0 }}</div>
+        <div>Lebih Besar Dari (>)</div><div>{{ Azka6 if Azka6 is not none else 0 }}</div>
+        <div>Lebih Kecil Dari (<)</div><div>{{ Azka7 if Azka7 is not none else 0 }}</div>
+        <div>Lebih Kecil atau Sama Dengan (<=)</div><div>{{ Azka8 if Azka8 is not none else 0 }}</div>
+        <div>Lebih Besar atau Sama Dengan (>=)</div><div>{{ Azka9 if Azka9 is not none else 0 }}</div>
+        </div>
+
+    </div>
+  </div>
+</body>
+</html>
